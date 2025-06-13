@@ -4,6 +4,7 @@ A local web-based tool for comparing two text blocks and highlighting difference
 
 Check it out: [📝 OpenDiff](https://wrignj08.github.io/OpenDiff/)
 
+[![Screenshot of OpenDiff.](https://github.com/wrignj08/OpenDiff/blob/main/images/OpenDiff-screenshot-1.png?raw=true)](https://wrignj08.github.io/OpenDiff/)
 
 ## Features
 
