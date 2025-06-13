@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenDiff</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="title-section">
+                    <h1>📝 OpenDiff</h1>
+                    <p>Compare two texts and highlight the differences</p>
+                </div>
+                <div class="header-actions">
+                    <a href="https://github.com/wrignj08/OpenDiff" class="github-link" target="_blank" rel="noopener"
+                        aria-label="View on GitHub">
+                        <span class="github-icon">⭐</span>
+                        <span class="github-text">GitHub</span>
+                    </a>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-layout">
+            <aside class="stats-sidebar" id="statsSidebar">
+                <div class="diff-mode-section">
+                    <h4>Diff Mode</h4>
+                    <div class="diff-mode-buttons">
+                        <button class="diff-mode-btn active" data-mode="word"
+                            title="Best for general text, preserves formatting">Word Level</button>
+                        <button class="diff-mode-btn" data-mode="character"
+                            title="Best for catching typos and small changes">Character Level</button>
+                        <button class="diff-mode-btn" data-mode="line" title="Best for structured text and code">Line
+                            Level</button>
+                    </div>
+                </div>
+
+                <h3>Statistics</h3>
+
+                <div class="stat-group">
+                    <div class="stat-item">
+                        <span class="stat-label">Added</span>
+                        <span class="stat-value added" id="wordsAdded">–</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Removed</span>
+                        <span class="stat-value removed" id="wordsRemoved">–</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Changed</span>
+                        <span class="stat-value" id="percentChanged">–</span>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="main-content">
+                <div class="input-section">
+                    <div class="text-inputs">
+                        <div class="input-group">
+                            <label for="originalText">Original Text</label>
+                            <textarea id="originalText" placeholder="Paste your original text here..."></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="modifiedText">Modified Text</label>
+                            <textarea id="modifiedText" placeholder="Paste your modified text here..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="resize-divider" id="resizeDivider">
+                        <div class="resize-handle">
+                            <div class="resize-dots"></div>
+                        </div>
+                    </div>
+
+                    <div class="controls">
+                        <button class="btn btn-secondary" onclick="clearAll()">Clear All</button>
+                    </div>
+                </div>
+
+                <div class="results-section" id="resultsSection" style="display: none;">
+                    <div class="legend">
+                        <div class="legend-item">
+                            <div class="legend-color added-legend"></div>
+                            <span>Added</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color removed-legend"></div>
+                            <span>Removed</span>
+                        </div>
+                    </div>
+
+                    <div class="diff-container">
+                        <div class="diff-panel">
+                            <div class="diff-header">Original Text</div>
+                            <div class="diff-content" id="originalDiff" data-sync-group="diff"></div>
+                        </div>
+                        <div class="diff-panel">
+                            <div class="diff-header">Modified Text</div>
+                            <div class="diff-content" id="modifiedDiff" data-sync-group="diff"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
