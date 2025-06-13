@@ -32,5 +32,5 @@ OpenDiff/
 └── README.md           # This file
 ```
 
-## Licence
-This project is licenced under the MIT Licence - see the LICENSE file for details.
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
