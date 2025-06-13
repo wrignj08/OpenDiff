@@ -2,6 +2,9 @@
 
 A local web-based tool for comparing two text blocks and highlighting differences.
 
+Check it out: [📝 OpenDiff](https://wrignj08.github.io/OpenDiff/)
+
+
 ## Features
 
 - **Automatic comparison** when both text areas have content
